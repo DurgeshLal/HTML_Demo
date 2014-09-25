@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 demo template</title>
+<!--
+    This is just demo templete which show list view grid view etcS event etc.
+--> 
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+    
+    <script>   
+        $.ui.autoLaunch = false; 
+        $.ui.backButtonText = "Back";
+    
+        $(document).ready(function(){
+            $.ui.launch();
+            
+            // setup signin and signup button events
+            $("#home").on("click", function(){
+                homeClick();
+            });
+            $("#picture").on("click", function(){
+                pictureClick();
+            });
+            $("#camera").on("click", function(){
+                cameraClick();
+            });
+            $("#mail").on("click", function(){
+                mailClick();
+            });
+            $("#message").on("click", function(){
+                messageClick();
+            });
+            $("#chat").on("click", function(){
+                chatClick();
+            });
+            $("#showAlert").onClick(function(){
+                showAlert();
+            });
+        });
+                
+        function homeClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function pictureClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function cameraClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function mailClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function messageClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function chatClick(){
+            $.ui.loadContent("main", null, null, "fade");
+        }
+        function showAlert(){
+            alert('Thanks for the click')
+        }
+
+
+        function startApp(){
+            // clears all back button history
+            $.ui.clearHistory();  
+            
+            // your app code here
+        }
+
+    </script>
+    
+<!-- ******* for grid view ******** -->
+<style>
+    /* CSS responsive square grid */
+    .grid-photo {margin:3px -7px;}
+    .grid-photo:after {content:'';display:block;clear:both;}
+    .grid-photo li {position: relative; display:block; float:left; width: 10%; padding-bottom: 10%;}
+    .grid-photo .grid-photo-box {position: absolute;left: 3px;right: 3px;top: 3px;bottom: 3px; background-color: rgba(128,128,128,0.2);}
+    .grid-photo img {width:100%;height:100%}
+    @media only screen and (max-width : 1024px) {
+        .grid-photo li {width: 12.5%; padding-bottom: 12.5%;}
+    }
+@media only screen and (max-width : 768px) {
+    .grid-photo li {width: 16.6%; padding-bottom: 16.6%;}
+}
+@media only screen and (max-width : 480px) {
+    .grid-photo li {width: 25%; padding-bottom: 25%;}
+}
+@media only screen and (max-width : 320px) {
+    .grid-photo li {width: 33.3%; padding-bottom: 33.3%;}
+}   
+</style>
+<!-- ******* for grid view ******** -->
+
+</head>
+<body> 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!-- Views -->
+        
+        <!-- Main View -->
+        <div class="panel" title="Demo App" id="page1" data-footer="none" selected="true">
+            <div style="text-align:center">
+            <br>
+            <p>Click on cell for open functionality</p>
+            </div>    
+            <ul class="list inset">
+                <li><a href="#home" class="icon home" style="text-align:left">Home (Text Box)</a></li>
+                <li><a href="#picture" class="icon picture" style="text-align:left">Picture (Grid View)</a></li>
+                <li><a href="#camera" class="icon camera" style="text-align:left">Camera</a></li>
+                <li><a href="#mail" class="icon mail" style="text-align:left">Mail</a></li>
+                <li><a href="#message" class="icon message" style="text-align:left">Message (List View)</a></li>
+                <li><a href="#chat" class="icon chat" style="text-align:left">Chat</a></li>
+            </ul>
+        </div>
+        
+        <!-- Home View -->
+        <div class="panel" title="Home" id="home" data-footer="none">
+            <div style="text-align:center">
+            <br>
+            <br>
+            <p>To access home dashboard you have to login first</p>
+            <br>
+            <br>
+            </div>
+            <input name="username" type="text" placeholder="username" />
+            <input name="password" type="password" placeholder="password" />
+            <a class="button block green" href="#showAlert" id="login" onClick="#showAlert">Login</a>
+        </div>
+       
+        
+        <!-- Picture Gride View View -->
+        <div class="panel" title="Picture" id="picture" data-footer="none">
+            <div class="grid-photo">
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://files.softicons.com/download/internet-icons/free-buttons-icons-by-exhumed/png/48/free4all0.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023393.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023394.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023396.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163081092.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023393.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023396.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023394.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023393.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163081092.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023393.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023396.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023394.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163081092.png" /></a></div></li>
+                <li><div class="grid-photo-box"><a href="#image1"><img src="http://www.ffpic.com/files/2013/1124/1305163719841086/ffpic1305163023393.png" /></a></div></li>
+            </div>
+        </div>
+        
+        <!-- Camera  View -->
+        <div class="panel" title="Camera" id="camera" data-footer="none">
+            <div style="text-align:center">
+                <br>
+                <br>
+                <p>Open Camera app if available</p>
+                <br>
+                <br>
+            </div>
+        </div>
+        
+        
+        <!-- Mail -->
+        <div class="panel" title="Mail" id="mail" data-footer="none">
+            <div style="text-align:center">
+                <br>
+                <br>
+                <p>Open mail application if available</p>
+                <br>
+                <br>
+            </div>
+        </div>
+        
+        <!-- Message List -->
+        <div class="panel" title="Message List" id="message" data-footer="none">
+            <ul class="list">
+                <li><a href="#message1">Message 1</a></li>
+                <li><a href="#message2">Message 2</a></li>
+                <li><a href="#message3">Message 3</a></li>
+                <li><a href="#message4">Message 4</a></li>
+                <li><a href="#message5">Message 5</a></li>
+            </ul>
+        </div>
+        
+        <div class="panel" title="Message 1" id="message1" data-footer="none">
+            <p>This is detail view for Message 1</p>
+        </div>
+        
+        <div class="panel" title="Message 2" id="message2" data-footer="none">
+            <p>This is detail view for Message 2</p>
+        </div>
+        
+        <div class="panel" title="Message 3" id="message3" data-footer="none">
+            <p>This is detail view for Message 3</p>
+        </div>
+        
+        <div class="panel" title="Message 4" id="message4" data-footer="none">
+            <p>This is detail view for Message 4</p>
+        </div>
+        
+        <div class="panel" title="Message 5" id="message5" data-footer="none">
+            <p>This is detail view for Message 5</p>
+        </div>
+        
+        <!-- Chat -->
+        <div class="panel" title="Chat" id="chat" data-footer="none">
+            <div style="text-align:center">
+                <br>
+                <br>
+                <p>Open Chat application if availalbe</p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>    
